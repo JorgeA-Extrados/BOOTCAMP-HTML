@@ -1,0 +1,134 @@
+.contenedor {
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: column;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  flex-wrap: wrap;
+}
+
+.contenedor2 {
+  display: flex;
+  width: 300px; /* Contenedor con un ancho fijo */
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* 🔹 Ejemplo 1: nowrap */
+.nowrap {
+  flex-wrap: nowrap; /* NO permite que los elementos bajen de línea */
+}
+
+/* 🔹 Ejemplo 2: wrap */
+.wrap {
+  flex-wrap: wrap; /* Permite que los elementos bajen de línea */
+}
+
+/* 🔹 Ejemplo 3: wrap-reverse */
+.wrap-reverse {
+  flex-wrap: wrap-reverse; /* Los elementos bajan de línea pero en orden inverso */
+}
+
+.contenedor3 {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.item2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  height: 100%;
+}
+
+/* 🔹 Ejemplo 1: flex-grow */
+.grow .item2:nth-child(1) {
+  flex-grow: 1;
+  background-color: steelblue;
+}
+.grow .item2:nth-child(2) {
+  flex-grow: 2;
+  background-color: crimson;
+}
+.grow .item2:nth-child(3) {
+  flex-grow: 3;
+  background-color: darkgreen;
+}
+
+/* 🔹 Ejemplo 2: flex-shrink */
+.shrink .item2 {
+  flex-basis: 200px;
+}
+.shrink .item2:nth-child(1) {
+  flex-shrink: 1;
+  background-color: steelblue;
+}
+.shrink .item2:nth-child(2) {
+  flex-shrink: 2;
+  background-color: crimson;
+}
+.shrink .item2:nth-child(3) {
+  flex-shrink: 3;
+  background-color: darkgreen;
+}
+
+/* 🔹 Ejemplo 3: flex-basis */
+.basis .item2:nth-child(1) {
+  flex-basis: 100px;
+  background-color: steelblue;
+}
+.basis .item2:nth-child(2) {
+  flex-basis: 200px;
+  background-color: crimson;
+}
+.basis .item2:nth-child(3) {
+  flex-basis: 300px;
+  background-color: darkgreen;
+}
+/* 
+✅ Ejemplo 1: flex-grow
+
+El primer elemento crece 1 vez el espacio disponible.
+El segundo crece 2 veces más que el primero.
+El tercero crece 3 veces más que el primero.
+✅ Ejemplo 2: flex-shrink
+
+Todos los elementos tienen flex-basis: 200px, pero cuando el contenedor se achica:
+El primer elemento se reduce 1 vez su tamaño normal.
+El segundo se reduce 2 veces más rápido.
+El tercero se reduce 3 veces más rápido.
+✅ Ejemplo 3: flex-basis
+
+Cada elemento tiene un tamaño inicial diferente (100px, 200px y 300px respectivamente).
+No se expande ni se contrae (porque no hay flex-grow ni flex-shrink). */
+
+/* nth-child es un pseudo-clase en CSS que te permite seleccionar elementos en base a su posición dentro de su contenedor hermano. */
+
+/* Media Queries para Responsividad */
+@media (max-width: 600px) {
+
+    iframe {
+        width: 200px;
+        height: 200px;
+    }
+}
